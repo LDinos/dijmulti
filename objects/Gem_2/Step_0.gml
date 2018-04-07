@@ -1,15 +1,20 @@
 /// @description Insert description here
 // You can write your code in this editor
 //if !MyGamerule.moving &&
-if collision_rectangle(x-35,y-35,x+35,y+35,MyLightObj,false,true)
+if MyGamerule.lightOn
 {
-	bloom = true
+	if collision_rectangle(x-35,y-35,x+35,y+35,MyLightObj,false,true)
+	{
+		bloom = true
 
+	}
+	else
+	{
+		bloom = false
+	}
 }
-else
-{
-	bloom = false
-}
+else bloom = false
+
 _i = floor((y-MyBoard.y+63)/64)
 _j = (x-MyBoard.x) div 64
 if gempower > 0
