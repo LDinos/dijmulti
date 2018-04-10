@@ -30,6 +30,19 @@ if MyGamerule.combo >= 1 && !dontshake
 	add_xymover(MyGem)
 }
 
+if gempower >= 5
+{
+	audio_play_sound(snd_septanovaexplode,2,false)
+	instance_create(x,y,obj_novaexplode)
+	part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion,50)
+	part_particles_create(global.sys_above_gem,x,y,global.partSeptaExplosion2,5)
+	for(i=0;i<=7;i++)
+	{
+		instance_create(MyBoard.x + 32*7, MyBoard.y + 64*i, MyLightKiller)
+		le = instance_create(MyBoard.x + 32*7, MyBoard.y + 64*i, MyLightObj)
+		with(le) {skinnum = other.skinnum;}
+	}
+}
 if gempower = 4
 {
 	//audio_play_sound(snd_novaexplode,1,false)

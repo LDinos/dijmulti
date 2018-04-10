@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if dohor
+//if x != xx
 {
 	x = lerp(xdefault,xx,percent)
 }
-else
+//else
 {
 	y = lerp(ydefault,yy,percent)	
 }

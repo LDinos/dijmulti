@@ -1,4 +1,5 @@
 ///@param Gem_index
+///@description Used on Avalanche Gameover
 audio_play_sound(snd_gemdrop,0,0)
 if argument0 = 1
 {

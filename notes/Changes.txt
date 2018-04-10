@@ -19,7 +19,7 @@ for v_0.13
 
 - April Fools
 
-for v_0.13b
+for v_0.14
 
 - Updates lightning particles
 - Updated AHM system
@@ -27,3 +27,6 @@ for v_0.13b
 - Fixed pass in avalanche
 - Made last row of gems not check for collision at all (= more fps)
 - 0 is an accepted keyword to write in your username now
+- Changed Lightning multiplier chance system after x12 (now it gets less frequent the more you play)
+- Made some simple effects on 4-gem match creations and above
+- (Online) Gems now also give acceleration/speed info to the server, so gems shouldn't get stuck easily (except if big lags), which means the gem unstucker script wont perform many actions and lag the server

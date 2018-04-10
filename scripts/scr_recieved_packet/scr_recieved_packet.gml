@@ -124,6 +124,7 @@ if instance_exists(obj_client)
 		case GEM_CREATION:
 			_i = buffer_read(buffer,buffer_s8)
 			_j = buffer_read(buffer,buffer_s8)
+			acc = buffer_read(buffer,buffer_s8)
 			xxyyskin = buffer_read(buffer,buffer_u8)
 			xxyyid = buffer_read(buffer,buffer_u8)
 			xxyycolor = find_color(xxyyskin)
@@ -131,6 +132,7 @@ if instance_exists(obj_client)
 			xxyygem.myid = xxyyid
 			xxyygem.mycolor = xxyycolor
 			xxyygem.image_index = xxyyskin
+			xxyygem.acc = acc
 			break;
 		
 		case SEND_XY:
@@ -236,6 +238,7 @@ else if instance_exists(obj_server)
 	case GEM_CREATION:
 			_i = buffer_read(buffer,buffer_s8)
 			_j = buffer_read(buffer,buffer_s8)
+			acc = buffer_read(buffer,buffer_s8)
 			xxyyskin = buffer_read(buffer,buffer_u8)
 			xxyyid = buffer_read(buffer,buffer_u8)
 			xxyycolor = find_color(xxyyskin)
@@ -243,6 +246,7 @@ else if instance_exists(obj_server)
 			xxyygem.myid = xxyyid
 			xxyygem.mycolor = xxyycolor
 			xxyygem.image_index = xxyyskin
+			xxyygem.acc = acc
 			break;
 			
 	case SEND_XY:

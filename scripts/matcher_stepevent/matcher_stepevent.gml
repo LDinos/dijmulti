@@ -13,6 +13,7 @@ Should it be a 3 match, call a 3 match on the centered gem. Should it be 4th, ca
 //5 septa
 //6 octa
 //Then check for horizontal matches
+center_gem = noone
 nummatches = 0 //for doubleset soundeffect
 with(argument0) matchme = -1
 for (i=0;i<=global.board_rows-1;i+=1)
@@ -21,363 +22,53 @@ for (i=0;i<=global.board_rows-1;i+=1)
         for (j=1;j<=7;j+=1)
         {
         
-            if gem_board1[i,j] = noone || gem_board1[i,j-1] = noone
+          if gem_board1[i,j] = noone || gem_board1[i,j-1] = noone
             {
-            script_execute(matcher_script1)
+				script_execute(matcher_script1,0)
             }
-            else if gem_board1[i,j].skinnum = gem_board1[i,j-1].skinnum
+          else if gem_board1[i,j].skinnum = gem_board1[i,j-1].skinnum
             {
                 n++
             }
-            else {
+          else {
+				center_gem = noone
 				if n >=3 nummatches++
-                if n >= 8
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,1000)
-					if (combo >= 1) style_add(1000)
-                    //script_execute(create_score_text,1000,gem_board1[i,j-3].x,gem_board1[i,j-3].y,gem_board1[i,j-3].mycolor)
-                    with(gem_board1[i,j-1]) {matchme = 0 } 
-                    with(gem_board1[i,j-2]) {matchme = 0 } 
-                    with(gem_board1[i,j-3]) {matchme = 0 } 
-                    with(gem_board1[i,j-4]) {matchme = 0 } 
-                    with(gem_board1[i,j-5]) matchme = 6
-                    with(gem_board1[i,j-6]) {matchme = 0 } 
-                    with(gem_board1[i,j-7]) {matchme = 0 } 
-                    with(gem_board1[i,j-8]) {matchme = 0 } 
-                    }
-                else if n = 7
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,300)
-					if (combo >= 1) style_add(300)
-                    //script_execute(create_score_text,300,gem_board1[i,j-2].x,gem_board1[i,j-2].y,gem_board1[i,j-3].mycolor)
-                    with(gem_board1[i,j-1]) {matchme = 0 } 
-                    with(gem_board1[i,j-2]) {matchme = 0 } 
-                    with(gem_board1[i,j-3]) {matchme = 0 } 
-                    with(gem_board1[i,j-4]) matchme = 5
-                    with(gem_board1[i,j-5]) {matchme = 0 } 
-                    with(gem_board1[i,j-6]) {matchme = 0 } 
-                    with(gem_board1[i,j-7]) {matchme = 0 } 
-                    }                   
-                else if n = 6
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[i,j-2].x,gem_board1[i,j-2].y,gem_board1[i,j-2].mycolor)
-                    with(gem_board1[i,j-1]) {matchme = 0 } 
-                    with(gem_board1[i,j-2]) {matchme = 0 } 
-                    with(gem_board1[i,j-3]) {matchme = 0 } 
-                    with(gem_board1[i,j-4]) matchme = 4
-                    with(gem_board1[i,j-5]) {matchme = 0 } 
-                    with(gem_board1[i,j-6]) {matchme = 0 }
-                    }
-                else if n = 5
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[i,j-2].x,gem_board1[i,j-2].y,gem_board1[i,j-2].mycolor)
-                    with(gem_board1[i,j-1]) {matchme = 0 }
-                    with(gem_board1[i,j-2]) {matchme = 0 }
-                    with(gem_board1[i,j-3]) matchme = 3
-                    with(gem_board1[i,j-4]) {matchme = 0 }
-                    with(gem_board1[i,j-5]) {matchme = 0 }
-                    } 
-                else if n = 4
-                    {
-                    p1=0
-                    p2=1
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    script_execute(check_powercenter,1,gem_board1[i,j-2])
-                    //script_execute(create_score_text,100,gem_board1[i,j-1].x,gem_board1[i,j-1].y,gem_board1[i,j-1].mycolor)
-                    with(gem_board1[i,j-1]) {matchme = 0 }
-                    with(gem_board1[i,j-2]) matchme = other.p1
-                    with(gem_board1[i,j-3]) matchme = other.p2
-                    with(gem_board1[i,j-4]) {matchme = 0 }
-                    }    
-                else if n = 3                
-                    {
-                    //audio_play_sound(gling,1,0)
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[i,j-2].x,gem_board1[i,j-2].y,gem_board1[i,j-2].mycolor)
-                    with(gem_board1[i,j-1]) matchme = 0
-                    with(gem_board1[i,j-2]) matchme = 0
-                    with(gem_board1[i,j-3]) matchme = 0
-                    }                                     
-                n = 1
-                
+                script_execute(matcher_script1,0)
             }
-            if j = 7 // on last check, check again since we dont have a next check.
-                {
-                if n >=3 nummatches++
-                if n >= 8
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,1000)
-					if (combo >= 1) style_add(1000)
-                    //script_execute(create_score_text,1000,gem_board1[i,j-4].x,gem_board1[i,j-4].y,gem_board1[i,j-4].mycolor)
-                    with(gem_board1[i,j]) {matchme = 0 }
-                    with(gem_board1[i,j-1]) {matchme = 0 }
-                    with(gem_board1[i,j-2]) {matchme = 0 }
-                    with(gem_board1[i,j-3]) {matchme = 0 }
-                    with(gem_board1[i,j-4]) matchme = 6
-                    with(gem_board1[i,j-5]) {matchme = 0 }
-                    with(gem_board1[i,j-6]) {matchme = 0 }
-                    with(gem_board1[i,j-7]) {matchme = 0 } 
-                    }
-                else if n = 7
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,300)
-					if (combo >= 1) style_add(300)
-                    //script_execute(create_score_text,300,gem_board1[i,j-3].x,gem_board1[i,j-3].y,gem_board1[i,j-3].mycolor)
-                    with(gem_board1[i,j]) {matchme = 0 }
-                    with(gem_board1[i,j-1]) {matchme = 0 }
-                    with(gem_board1[i,j-2]) {matchme = 0 }
-                    with(gem_board1[i,j-3]) matchme = 5
-                    with(gem_board1[i,j-4]) {matchme = 0 }
-                    with(gem_board1[i,j-5]) {matchme = 0 }
-                    with(gem_board1[i,j-6]) {matchme = 0 }
-                    }
-                 else if n = 6
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[i,j-3].x,gem_board1[i,j-3].y,gem_board1[i,j-3].mycolor)
-                    with(gem_board1[i,j]) {matchme = 0 }
-                    with(gem_board1[i,j-1]) {matchme = 0 }
-                    with(gem_board1[i,j-2]) {matchme = 0 } 
-                    with(gem_board1[i,j-3]) matchme = 4
-                    with(gem_board1[i,j-4]) {matchme = 0 } 
-                    with(gem_board1[i,j-5]) {matchme = 0 }
-                    } 
-                 else if n = 5
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[i,j-2].x,gem_board1[i,j-2].y,gem_board1[i,j-2].mycolor)
-                    with(gem_board1[i,j]) {matchme = 0 }
-                    with(gem_board1[i,j-1]) {matchme = 0 }
-                    with(gem_board1[i,j-2]) matchme = 3
-                    with(gem_board1[i,j-3]) {matchme = 0 } 
-                    with(gem_board1[i,j-4]) {matchme = 0 }
-                    } 
-                else if n = 4
-                    {
-                    p1 = 0
-                    p2 = 1
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    script_execute(check_powercenter,1,gem_board1[i,j-1])
-                    //script_execute(create_score_text,100,gem_board1[i,j-1].x,gem_board1[i,j-1].y,gem_board1[i,j-1].mycolor)
-                    with(gem_board1[i,j]) {matchme = 0 }
-                    with(gem_board1[i,j-1]) matchme = other.p1
-                    with(gem_board1[i,j-2]) matchme = other.p2
-                    with(gem_board1[i,j-3]) {matchme = 0 }
-                    }      
-                else if n = 3                
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[i,j-1].x,gem_board1[i,j-1].y,gem_board1[i,j-1].mycolor)
-                    with(gem_board1[i,j]) matchme = 0
-                    with(gem_board1[i,j-1]) matchme = 0
-                    with(gem_board1[i,j-2]) matchme = 0
-                    }                    
-                n = 1
-                }
+          if j = 7 // on last check, check again since we dont have a next check.
+            {
+	            if n >=3 nummatches++
+	            script_execute(matcher_script1,1)
+            }
                           
         }
     }
 //Now check vertical ones, while having in mind diagonal too
+center_gem = noone
 for (i=0;i<=7;i+=1)
     {
         n2 = 1
         for (j=1;j<=global.board_rows-1;j+=1)
         {
-            if gem_board1[j,i] = noone || gem_board1[j-1,i] = noone
+          if gem_board1[j,i] = noone || gem_board1[j-1,i] = noone
             {
-            script_execute(matcher_script2)
+				script_execute(matcher_script2,0)
             }
-            else if gem_board1[j,i].skinnum = gem_board1[j-1,i].skinnum && gem_board1[j,i].sprite_index != spr_hypercube && gem_board1[j-1,i].sprite_index != spr_hypercube
+          else if gem_board1[j,i].skinnum = gem_board1[j-1,i].skinnum && gem_board1[j,i].sprite_index != spr_hypercube && gem_board1[j-1,i].sprite_index != spr_hypercube
             {
                 n2++
             }
-            else { 
+          else 
+			{
+				center_gem = noone
                 if n2 >=3 nummatches++  
-                if n2 >= 8
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,1000)
-					if (combo >= 1) style_add(1000)
-                    //script_execute(create_score_text,1000,gem_board1[j-2,i].x,gem_board1[j-2,i].y,gem_board1[j-2,i].mycolor)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    with(gem_board1[j-4,i]) script_execute(match_script,0)
-                    with(gem_board1[j-5,i]) script_execute(match_script,6)
-                    with(gem_board1[j-6,i]) script_execute(match_script,0)
-                    with(gem_board1[j-7,i]) script_execute(match_script,0)
-                    with(gem_board1[j-8,i]) script_execute(match_script,0)
-                    }                     
-                else if n2 = 7
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,300)
-					if (combo >= 1) style_add(300)
-                    //script_execute(create_score_text,300,gem_board1[j-3,i].x,gem_board1[j-3,i].y,gem_board1[j-3,i].mycolor)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    with(gem_board1[j-4,i]) script_execute(match_script,5)
-                    with(gem_board1[j-5,i]) script_execute(match_script,0)
-                    with(gem_board1[j-6,i]) script_execute(match_script,0)
-                    with(gem_board1[j-7,i]) script_execute(match_script,0)
-                    }
-                else if n2 = 6
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[j-3,i].x,gem_board1[j-3,i].y,gem_board1[j-3,i].mycolor)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    with(gem_board1[j-4,i]) script_execute(match_script,4)
-                    with(gem_board1[j-5,i]) script_execute(match_script,0)
-                    with(gem_board1[j-6,i]) script_execute(match_script,0)
-                    }
-                else if n2 = 5
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[j-2,i].x,gem_board1[j-2,i].y,gem_board1[j-2,i].mycolor)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,3)
-                    with(gem_board1[j-4,i]) script_execute(match_script,0)
-                    with(gem_board1[j-5,i]) script_execute(match_script,0)
-                    }
-               else if n2 = 4
-                    {
-                    p1 = 1
-                    p2 = 0
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    script_execute(check_powercenter,2,gem_board1[j-2,i])
-                    //script_execute(create_score_text,100,gem_board1[j-1,i].x,gem_board1[j-1,i].y,gem_board1[j-1,i].mycolor)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,other.p1)
-                    with(gem_board1[j-3,i]) script_execute(match_script,other.p2)
-                    with(gem_board1[j-4,i]) script_execute(match_script,0)
-                    }                                                      
-                else if n2 = 3                                
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[j-2,i].x,gem_board1[j-2,i].y,gem_board1[j-2,i].mycolor)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    }                        
-                n2 = 1
-                
+                script_execute(matcher_script2,0)        
             }
-            if j = global.board_rows-1 // on last check, check again since we dont have a next check.
-                {
+          if j = global.board_rows-1 // on last check, check again since we dont have a next check.
+            {
 				if n2 >=3 nummatches++
-                 if n2 >= 8
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,1000)
-					if (combo >= 1) style_add(1000)
-                    //script_execute(create_score_text,1000,gem_board1[j-3,i].x,gem_board1[j-3,i].y,gem_board1[j-3,i].mycolor)
-                    with(gem_board1[j,i]) script_execute(match_script,0)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    with(gem_board1[j-4,i]) script_execute(match_script,6)
-                    with(gem_board1[j-5,i]) script_execute(match_script,0)
-                    with(gem_board1[j-6,i]) script_execute(match_script,0)
-                    with(gem_board1[j-7,i]) script_execute(match_script,0)
-                    }   
-                else if n2 = 7
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,300)
-					if (combo >= 1) style_add(300)
-                    //script_execute(create_score_text,300,gem_board1[j-2,i].x,gem_board1[j-2,i].y,gem_board1[j-2,i].mycolor)
-                    with(gem_board1[j,i]) script_execute(match_script,0)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,5)
-                    with(gem_board1[j-4,i]) script_execute(match_script,0)
-                    with(gem_board1[j-5,i]) script_execute(match_script,0)
-                    with(gem_board1[j-6,i]) script_execute(match_script,0)
-                    } 
-                else if n2 = 6
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[j-2,i].x,gem_board1[j-2,i].y,gem_board1[j-2,i].mycolor)
-                    with(gem_board1[j,i]) script_execute(match_script,0)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    with(gem_board1[j-3,i]) script_execute(match_script,4)
-                    with(gem_board1[j-4,i]) script_execute(match_script,0)
-                    with(gem_board1[j-5,i]) script_execute(match_script,0)
-                    } 
-                else if n2 = 5
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[j-1,i].x,gem_board1[j-1,i].y,gem_board1[j-1,i].mycolor)
-                    with(gem_board1[j,i]) script_execute(match_script,0)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,3)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    with(gem_board1[j-4,i]) script_execute(match_script,0)
-                    } 
-               else if n2 = 4
-                    {
-                    p1 = 1
-                    p2 = 0
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    script_execute(check_powercenter,2,gem_board1[j-1,i])
-                    //script_execute(create_score_text,100,gem_board1[j,i].x,gem_board1[j,i].y,gem_board1[j,i].mycolor)
-                    with(gem_board1[j,i]) script_execute(match_script,0)
-                    with(gem_board1[j-1,i]) script_execute(match_script,other.p1)
-                    with(gem_board1[j-2,i]) script_execute(match_script,other.p2)
-                    with(gem_board1[j-3,i]) script_execute(match_script,0)
-                    }                        
-                else if n2 = 3                
-                    {
-                    //audio_play_sound(gling,1,0)                    
-                    script_execute(points_add,100)
-					if (combo >= 1) style_add(100)
-                    //script_execute(create_score_text,100,gem_board1[j-1,i].x,gem_board1[j-1,i].y,gem_board1[j-1,i].mycolor)
-                    with(gem_board1[j,i]) script_execute(match_script,0)
-                    with(gem_board1[j-1,i]) script_execute(match_script,0)
-                    with(gem_board1[j-2,i]) script_execute(match_script,0)
-                    }                   
-                n2 = 1
-                }
+				script_execute(matcher_script2,1) 
+            }
                        
         }
     }
@@ -408,7 +99,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
                 script_execute(points_add,600)
 				if (combo >= 1) style_add(600)
                 //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
-                audio_play_sound(snd_supernovacreate,0,false)
+                audio_play_sound(snd_octacreate,0,false)
                 audio_play_sound(snd_lightcreate,0,false)
                 //with(obj_challenger) event_user(0) //for bonus challenge
 			}
@@ -418,10 +109,20 @@ for (i=0;i<=global.board_rows-1;i+=1)
                 script_execute(points_add,250)
 				if (combo >= 1) style_add(250)
                 //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
-                audio_play_sound(snd_supernovacreate,0,false)
+                audio_play_sound(snd_septacreate,0,false)
                 audio_play_sound(snd_lightcreate,0,false)
                 //with(obj_challenger) event_user(0) //for bonus challenge
 			}
+			else if gem_board1[i,j].matchme = 4 
+            {
+                with(gem_board1[i,j]) script_execute(make_supernova,argument0)
+                script_execute(points_add,100)
+				if (combo >= 1) style_add(100)
+                //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
+                audio_play_sound(snd_supernovacreate,0,false)
+                audio_play_sound(snd_lightcreate,0,false)
+                //with(obj_challenger) event_user(0) //for bonus challenge
+            }
             else if gem_board1[i,j].matchme = 3 
             {
 				//script_execute(create_score_text,50,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
@@ -461,16 +162,6 @@ for (i=0;i<=global.board_rows-1;i+=1)
                 //script_execute(create_score_text,25,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
                 //with(obj_challenger) event_user(0) //for bonus challenge
                 audio_play_sound(snd_flamecreate,0,false)
-            }
-            else if gem_board1[i,j].matchme = 4 
-            {
-                with(gem_board1[i,j]) script_execute(make_supernova,argument0)
-                script_execute(points_add,100)
-				if (combo >= 1) style_add(100)
-                //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
-                audio_play_sound(snd_supernovacreate,0,false)
-                audio_play_sound(snd_lightcreate,0,false)
-                //with(obj_challenger) event_user(0) //for bonus challenge
             }
             else if gem_board1[i,j].matchme = 0 
             { 

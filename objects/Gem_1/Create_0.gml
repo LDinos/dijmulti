@@ -41,7 +41,7 @@ _i = floor((y-MyBoard.y+63)/64)
 _j = (x-MyBoard.x+63) div 64
 crap = false
 myid = -4
-if instance_exists(obj_server)
+if instance_exists(MyNet)
 {
 	i = 0
 	do

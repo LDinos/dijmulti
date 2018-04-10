@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if MyGamerule.OPT_lightallowed
+if MyGamerule.OPT_lightallowed && shader_is_compiled(shd_bright_contrast)
 {/*
 	if gempower > 0
 	{

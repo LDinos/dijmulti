@@ -4,8 +4,8 @@ flameon = false
 color = c_red
 OPT_lightallowed = true
 iam = Gamerule_1
-global.version = "v0.12b"
-for(i=0;i<70;i++) global.gemlist[i] = noone //we use 70 instead of 64 just so we can have a little more space in bug cases
+global.version = "v0.14"
+for(i=0;i<global.board_rows*8;i++) global.gemlist[i] = noone //we use 70 instead of 64 just so we can have a little more space in bug cases
 num_skin = 6 //number of skins, beginning from 0
 if room = rm_avalanche num_skin = 5
 board_xsize = 8

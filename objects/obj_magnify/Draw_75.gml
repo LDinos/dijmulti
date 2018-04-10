@@ -2,6 +2,8 @@
 var_mouse_pos_x = x;
 var_mouse_pos_y = y-512;
 shader_set(shd_magnify);
+if shader_is_compiled(shd_magnify) && Gamerule_1.OPT_lightallowed
+{
     shader_set_uniform_f(uni_time, var_time_var);
     shader_set_uniform_f(uni_mouse_pos, var_mouse_pos_x, var_mouse_pos_y);
     shader_set_uniform_f(uni_resolution, var_resolution_x, var_resolution_y);
@@ -11,6 +13,9 @@ shader_set(shd_magnify);
 	//if surface_exists(surf) draw_surface(surf,0,0)
 	//else surf = surface_create(1280,720)
 	draw_surface(application_surface,0,0)
+}
+else application_surface_draw_enable(1);
+
 shader_reset();
 
 //else surf = surface_create(1280,720)

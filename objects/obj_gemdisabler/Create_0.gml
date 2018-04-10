@@ -2,7 +2,7 @@
 // You can write your code in this editor
 xdefault = x
 ydefault = y
-dohor = true
+//dohor = true
 image_speed = 0
 alpha = 1
 percent = 0

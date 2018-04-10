@@ -6,3 +6,4 @@ imagexscale = 1
 imageyscale = 1
 image_speed = 0
 alarm[0] = 1
+//if position_meeting(x,y,obj_gemdisabler) instance_destroy()

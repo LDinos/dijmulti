@@ -1,28 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+var luck; 
 if !ammoving && !lightOn
 {
-	if place_meeting(x,y,CL_gem) //if stuck
-	{
-		with(obj_server)
-		{
-			//buffer = buffer_create(1024,buffer_fixed,1)
-			buffer_resize(buffer,1) buffer_seek(buffer,buffer_seek_start,0)
-			buffer_write(buffer,buffer_u8,REQUEST_XY) //2
-			buffer_write(buffer,buffer_u8,other.myid) //2 x y skin creation_id
-			network_send_packet(client_socket,buffer,buffer_tell(buffer))
-			//buffer_delete(buffer)
-		}
-		with(obj_client)
-		{
-			//buffer = buffer_create(1024,buffer_fixed,1)
-			buffer_resize(buffer,1) buffer_seek(buffer,buffer_seek_start,0)
-			buffer_write(buffer,buffer_u8,REQUEST_XY) //2
-			buffer_write(buffer,buffer_u8,other.myid) //2 x y skin creation_id
-			network_send_packet(client_socket,buffer,buffer_tell(buffer))
-			//buffer_delete(buffer)
-		}
-	}
 	acc+=0.6	
 		if (place_meeting(x,y+acc,CL_gem))
 		{
@@ -60,8 +40,28 @@ if !ammoving && !lightOn
 			}
 			acc = 0
 		}
-
 	y+=acc
+	if place_meeting(x,y,CL_gem) //if stuck
+	{
+		with(obj_server)
+		{
+			//buffer = buffer_create(1024,buffer_fixed,1)
+			buffer_resize(buffer,1) buffer_seek(buffer,buffer_seek_start,0)
+			buffer_write(buffer,buffer_u8,REQUEST_XY) //2
+			buffer_write(buffer,buffer_u8,other.myid) //2 x y skin creation_id
+			network_send_packet(client_socket,buffer,buffer_tell(buffer))
+			//buffer_delete(buffer)
+		}
+		with(obj_client)
+		{
+			//buffer = buffer_create(1024,buffer_fixed,1)
+			buffer_resize(buffer,1) buffer_seek(buffer,buffer_seek_start,0)
+			buffer_write(buffer,buffer_u8,REQUEST_XY) //2
+			buffer_write(buffer,buffer_u8,other.myid) //2 x y skin creation_id
+			network_send_packet(client_socket,buffer,buffer_tell(buffer))
+			//buffer_delete(buffer)
+		}
+	}
 }
 
 if gempower = 1
@@ -71,17 +71,52 @@ if gempower = 1
 }
 else if gempower = 2
 {
-	part_particles_create(global.sys_below_gem,x,y,global.partLight,1)
-	part_particles_create(global.sys_below_gem,x,y,global.partRay,1)
+	//part_particles_create(global.sys_below_gem,x,y,global.partLight,1)
+	//part_particles_create(global.sys_below_gem,x,y,global.partRay,1)
+	luck = irandom(10)
+	if luck < 2 sys = global.sys_above_gem
+	else sys = global.sys_below_gem
+	emit_newstar = part_emitter_create(sys);
+	part_emitter_region(sys,emit_newstar,x-32,x+32,y-32,y+32,2,0);
+	part_emitter_burst(sys,emit_newstar,global.part_star_bolt,2);
 }
 else if gempower = 3
 {
-	part_particles_create(global.sys_below_gem,x,y,global.partNovaLight,1)
-	part_particles_create(global.sys_below_gem,x,y,global.partNovaRay,1)
+	//part_particles_create(global.sys_below_gem,x,y,global.partNovaLight,1)
+	//part_particles_create(global.sys_below_gem,x,y,global.partNovaRay,1)
+	luck = irandom(10)
+	if luck < 2 sys = global.sys_above_gem
+	else sys = global.sys_below_gem
+	emit_newstar = part_emitter_create(sys);
+	part_emitter_region(sys,emit_newstar,x-32,x+32,y-32,y+32,2,0);
+	part_emitter_burst(sys,emit_newstar,global.part_star_bolt,2);
 	part_particles_create(global.sys_below_gem,x,y,global.partNovaFire,1)
 }
-
-if amMulti || amTimeGem
+else if gempower = 4
+{
+	part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
+	part_particles_create(global.sys_below_gem,x,y,global.partCinder,1)
+	luck = irandom(10)
+	if luck < 2 sys = global.sys_above_gem
+	else sys = global.sys_below_gem
+	emit_newstar = part_emitter_create(sys);
+	part_emitter_region(sys,emit_newstar,x-32,x+32,y-32,y+32,2,0);
+	part_emitter_burst(sys,emit_newstar,global.part_star_bolt,2);
+	part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),x,y,global.partSeptafractal,1)
+}
+else if gempower = 5
+{
+	part_particles_create(global.sys_below_gem,x,y,global.partFire,1)
+	part_particles_create(global.sys_below_gem,x,y,global.partCinder,1)
+	luck = irandom(10)
+	if luck < 2 sys = global.sys_above_gem
+	else sys = global.sys_below_gem
+	emit_newstar = part_emitter_create(sys);
+	part_emitter_region(sys,emit_newstar,x-32,x+32,y-32,y+32,2,0);
+	part_emitter_burst(sys,emit_newstar,global.part_star_bolt,2);
+	part_particles_create(choose(global.sys_below_gem,global.sys_above_gem),x,y,global.partOctafractal,1)
+}
+else if amMulti || amTimeGem
 {
 	part_type_color1(global.pr_multi,mycolor)
 	part_particles_create(global.sys_above_gem,x,y,global.pr_multi,1)

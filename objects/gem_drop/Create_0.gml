@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Used on Avalanche Gameover
 // You can write your code in this editor
 image_xscale = Gamerule_1.images_res
 image_yscale = Gamerule_1.images_res
