@@ -17,6 +17,8 @@ else bloom = false
 
 _i = floor((y-MyBoard.y+63)/64)
 _j = (x-MyBoard.x) div 64
+
+
 if gempower > 0
 {
 	alpharand = irandom_range(3,6)
@@ -48,7 +50,7 @@ if _i != 7 || acc != 0//no need to check for collisions at the very bottom
 			//else instance_destroy() //if im wtf the same?
 		}
 
-	
+			
 			acc+=0.6	
 			if (place_meeting(x,y+acc,collider))
 			{
@@ -63,9 +65,39 @@ if _i != 7 || acc != 0//no need to check for collisions at the very bottom
 				acc = 0
 			}
 			y+=acc
+			
+			
+			/*
+			acc+=0.6
+			acc = clamp(acc,-30,30)
+			if _i >= 0
+			{
+				if _i = 7
+				{
+					if (y + acc) - MyBoard.y >= _i*64
+						{
+						y = MyBoard.y + 64*_i
+						acc = 0
+						}
+				}
+				else if instance_exists(MyGamerule.gem_board1[_i+1,_j]) && MyGamerule.gem_board1[_i+1,_j] != id
+				{
+					if MyGamerule.gem_board1[_i+1,_j].acc = 0
+					{
+						if (y + acc) - MyBoard.y >= _i*64
+						{
+						y = MyBoard.y + 64*_i
+						acc = 0
+						}
+					}
+				}				
+			}
+			if instance_exists(MyDiss) acc = 0
+			y+=acc*/
+			
 	}
 	else {acc = 0; y = MyBoard.y + 64*_i}
-}
+} else acc = 0
 
 if amPowered
 {

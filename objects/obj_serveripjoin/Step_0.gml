@@ -22,7 +22,7 @@ if keyboard_check_pressed(vk_backspace)
     }
 else if keyboard_check_pressed(vk_anykey)
     {
-    if (keyboard_lastkey > 48 && keyboard_lastkey  < 91) || keyboard_lastchar = "."
+    if (keyboard_lastkey > 48 && keyboard_lastkey  < 91) || keyboard_lastchar = "." || keyboard_lastchar = "0"
         {
         if string_length(field) <= 18
             {

@@ -25,6 +25,13 @@
 			}
 			until global.user1 != global.user2
 		}
+		
+		switch global.user2
+		{
+			case "Rhynier":
+				Board_1.sprite_index = spr_board_rhynier
+				break;
+		}
 
 	}
 	text = global.user2

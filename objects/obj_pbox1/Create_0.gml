@@ -25,9 +25,16 @@
 			}
 			until global.user1 != global.user2
 		}
+		
+		switch global.user1
+		{
+			case "Rhynier":
+				Board_1.sprite_index = spr_board_rhynier
+				break;
+		}
 
 	}
 	text = global.user1
-
+	
 image_speed = 0
 length = string_length(text)

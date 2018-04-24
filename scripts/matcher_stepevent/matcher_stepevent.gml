@@ -95,7 +95,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
 			
 			if gem_board1[i,j].matchme = 6
 			{
-				with(gem_board1[i,j]) script_execute(make_octanova,argument0)
+				with(gem_board1[i,j]) make_power(argument0,5)//script_execute(make_octanova,argument0)
                 script_execute(points_add,600)
 				if (combo >= 1) style_add(600)
                 //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
@@ -105,7 +105,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
 			}
 			else if gem_board1[i,j].matchme = 5
 			{
-				with(gem_board1[i,j]) script_execute(make_septanova,argument0)
+				with(gem_board1[i,j]) make_power(argument0,4)//script_execute(make_septanova,argument0)
                 script_execute(points_add,250)
 				if (combo >= 1) style_add(250)
                 //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
@@ -115,7 +115,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
 			}
 			else if gem_board1[i,j].matchme = 4 
             {
-                with(gem_board1[i,j]) script_execute(make_supernova,argument0)
+                with(gem_board1[i,j]) make_power(argument0,3)//script_execute(make_supernova,argument0)
                 script_execute(points_add,100)
 				if (combo >= 1) style_add(100)
                 //script_execute(create_score_text,100,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
@@ -126,7 +126,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
             else if gem_board1[i,j].matchme = 3 
             {
 				//script_execute(create_score_text,50,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
-                with(gem_board1[i,j]) script_execute(make_light,argument0)
+                with(gem_board1[i,j]) make_power(argument0,2)//script_execute(make_light,argument0)
                 script_execute(points_add,50)  
 				if (combo >= 1) style_add(50)
                 //with(obj_challenger) event_user(0) //for bonus challenge
@@ -138,7 +138,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
                 if !hypeallowed
                 {
                     //script_execute(create_score_text,50,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)
-                    with(gem_board1[i,j]) script_execute(make_light,argument0)
+                    with(gem_board1[i,j]) make_power(argument0,2)//script_execute(make_light,argument0)
                     script_execute(points_add,50) 
 					if (combo >= 1) style_add(50)
                     //with(obj_challenger) event_user(0) //for bonus challenge
@@ -156,7 +156,7 @@ for (i=0;i<=global.board_rows-1;i+=1)
             }
              else if gem_board1[i,j].matchme = 1 
             {
-                with(gem_board1[i,j]) script_execute(make_flame,argument0);
+                with(gem_board1[i,j]) make_power(argument0,1)//script_execute(make_flame,argument0);
                 script_execute(points_add,25)
 				if (combo >= 1) style_add(25)
                 //script_execute(create_score_text,25,gem_board1[i,j].x,gem_board1[i,j].y,gem_board1[i,j].mycolor)

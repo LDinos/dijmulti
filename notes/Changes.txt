@@ -30,3 +30,7 @@ for v_0.14
 - Changed Lightning multiplier chance system after x12 (now it gets less frequent the more you play)
 - Made some simple effects on 4-gem match creations and above
 - (Online) Gems now also give acceleration/speed info to the server, so gems shouldn't get stuck easily (except if big lags), which means the gem unstucker script wont perform many actions and lag the server
+
+for v_0.14b
+- Fixed weird bug where 0 would not be accepted
+- Made gem list more than 64 just in case AHM does some tricky stuff

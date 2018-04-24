@@ -59,6 +59,8 @@ else
         newflame.skinnum = skinnum
         newflame.image_index = skinnum
         newflame.gempower = 1
+		newflame.myid = myid
+		instance_destroy()
 		idtosend = newflame.myid
 		powertosend = newflame.gempower
         with(newflame)
@@ -87,7 +89,7 @@ else
 			buffer_write(buffer,buffer_bool,false)
 			network_send_packet(client_socket,buffer,buffer_tell(buffer))
 		}
-		instance_destroy()
+		
 
         
     }

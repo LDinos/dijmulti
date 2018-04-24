@@ -407,6 +407,14 @@
             }
         },
         {
+            "Key": "1eda9bf2-aeee-497c-a683-1e57a6d2c66e",
+            "Value": {
+                "id": "cc7cc219-4f4d-436d-8a20-e3b994248cb8",
+                "resourcePath": "scripts\\make_power\\make_power.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1f0b40a7-d870-49d5-80e9-7d0595ee1539",
             "Value": {
                 "id": "06065e63-b04e-4a23-8052-f70884bc0b22",
@@ -1412,6 +1420,14 @@
                 "id": "8b562bd3-476e-4595-bceb-1d658110a6bd",
                 "resourcePath": "scripts\\replace\\replace.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "64f83dc7-0540-4f3d-b08d-b16433a1c5a0",
+            "Value": {
+                "id": "b1ac6883-c943-44ce-8f72-85d6b913b8fe",
+                "resourcePath": "sprites\\spr_board_rhynier\\spr_board_rhynier.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3294,6 +3310,7 @@
         "cefda754-9d0d-48b7-bad2-176aad6cfd7f",
         "bc76f4ca-b5bb-4b16-ae45-ad3aea3deb41",
         "f6ed2887-7662-4713-a5d3-21b0e15488b1",
+        "1eda9bf2-aeee-497c-a683-1e57a6d2c66e",
         "11c584de-d373-4dda-baa9-5c57fbf13fc0",
         "db167625-03c9-4dd7-8951-a590eecb5241",
         "b72e4df5-2caa-4ed0-8e24-b694ba339cc5",

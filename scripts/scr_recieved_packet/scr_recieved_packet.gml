@@ -127,12 +127,15 @@ if instance_exists(obj_client)
 			acc = buffer_read(buffer,buffer_s8)
 			xxyyskin = buffer_read(buffer,buffer_u8)
 			xxyyid = buffer_read(buffer,buffer_u8)
+			xxyypower = buffer_read(buffer,buffer_u8)
 			xxyycolor = find_color(xxyyskin)
+			//with(CL_gem) if (myid = other.xxyyid) instance_destroy()
 			xxyygem = instance_create_depth(Board_1.x + 64*_j,Board_1.y + 64*_i,-1,CL_gem)
 			xxyygem.myid = xxyyid
 			xxyygem.mycolor = xxyycolor
 			xxyygem.image_index = xxyyskin
 			xxyygem.acc = acc
+			xxyygem.gempower = xxyypower
 			break;
 		
 		case SEND_XY:
@@ -241,12 +244,15 @@ else if instance_exists(obj_server)
 			acc = buffer_read(buffer,buffer_s8)
 			xxyyskin = buffer_read(buffer,buffer_u8)
 			xxyyid = buffer_read(buffer,buffer_u8)
+			xxyypower = buffer_read(buffer,buffer_u8)
 			xxyycolor = find_color(xxyyskin)
+			//with(CL_gem) if (myid = other.xxyyid) instance_destroy()
 			xxyygem = instance_create_depth(Board_2.x + 64*_j,Board_2.y + 64*_i,-1,CL_gem)
 			xxyygem.myid = xxyyid
 			xxyygem.mycolor = xxyycolor
 			xxyygem.image_index = xxyyskin
 			xxyygem.acc = acc
+			xxyygem.gempower = xxyypower
 			break;
 			
 	case SEND_XY:

@@ -138,10 +138,10 @@ else if gempower = 1
 			}
 		}
 	}
-	for(i=-1;i<=1;i++)
+	/*for(i=-1;i<=1;i++)
 	{
 	with(instance_position(x + 64*i, y - 128, MyGem)) push_up(MyGem)
-	}
+	}*/
 }
 
 if amexplode explode(MyGem)
@@ -161,7 +161,8 @@ for(i=1;i<=10;i++)
 	part_particles_create(global.sys_below_gem,x+xr,y+yr,global.pr_gembreak,1)
 }
 
-if instance_exists(MyNet) global.gemlist[myid] = noone
+if instance_exists(MyNet) && send_destroy_info global.gemlist[myid] = noone
+
 with(MyNet)
 {
 	//buffer = buffer_create(1024,buffer_fixed,1)

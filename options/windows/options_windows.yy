@@ -11,7 +11,7 @@
     "option_windows_description_info": "A Bejeweled Fanmade Game",
     "option_windows_display_cursor": true,
     "option_windows_display_name": "Made in GameMaker Studio 2",
-    "option_windows_enable_steam": true,
+    "option_windows_enable_steam": false,
     "option_windows_executable_name": "${project_name}",
     "option_windows_icon": "${base_options_dir}\\windows\\icons\\icon.ico",
     "option_windows_installer_finished": "${base_options_dir}\\windows\\installer\\finished.bmp",

@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 //Instance variables so that copy pasting code through gems will be easier
+send_destroy_info = true //send server/client info that i got killed
 MyGem = Gem_2
 MyGamerule = Gamerule_2
 MyBoard = Board_2
@@ -41,20 +42,7 @@ _i = floor((y-MyBoard.y+63)/64)
 _j = (x-MyBoard.x+63) div 64
 crap = false
 myid = -4
-if instance_exists(MyNet)
-{
-	i = 0
-	do
-	{
-		if global.gemlist[i] == noone
-		{
-			global.gemlist[i] = i
-			myid = i
-		}
-		i++
-	}
-	until (myid != -4)
-}
+
 image_xscale = MyGamerule.images_res
 image_yscale = MyGamerule.images_res
 le1 = noone

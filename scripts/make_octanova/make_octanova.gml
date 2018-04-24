@@ -61,6 +61,8 @@ else
         newlight.skinnum = skinnum
         newlight.image_index = skinnum
         newlight.gempower = 5
+		newlight.myid = myid
+		instance_destroy()
 		idtosend = newlight.myid
 		powertosend = newlight.gempower
 		with(obj_server)
@@ -89,5 +91,5 @@ else
         }
         //gemout = instance_create(x,y,obj_gemoutlines)
         //gemout.image_index = newlight.skinnum
-		instance_destroy()    
+		   
 }
