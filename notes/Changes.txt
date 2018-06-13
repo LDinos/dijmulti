@@ -1,0 +1,43 @@
+for v0.12
+
+- Made stats room
+- Fixed 65th gem bug
+- Fixed gem stuck bug
+- Made changes to AHM
+- Fixed weird L-T formations not giving star gems
+- **Online is now playable!**
+- Fixed double GAMEOVER
+- Added stats and options button on menu
+- Fixed some options not saving when quitting or saving different settings instead
+- Added some music in stats screen
+
+for v_0.12b
+
+- Made online packets much lighter
+
+for v_0.13
+
+- April Fools
+
+for v_0.14
+
+- Updates lightning particles
+- Updated AHM system
+- Added shaders and removed cpu demanding lighting drawings
+- Fixed pass in avalanche
+- Made last row of gems not check for collision at all (= more fps)
+- 0 is an accepted keyword to write in your username now
+- Changed Lightning multiplier chance system after x12 (now it gets less frequent the more you play)
+- Made some simple effects on 4-gem match creations and above
+- (Online) Gems now also give acceleration/speed info to the server, so gems shouldn't get stuck easily (except if big lags), which means the gem unstucker script wont perform many actions and lag the server
+
+for v_0.14b
+- Fixed weird bug where 0 would not be accepted
+- Made gem list more than 64 just in case AHM does some tricky stuff
+
+for v_0.15
+- Made simple intro screen with new music
+- Added Help section
+- Added some simple gas backgrounds so the game isn't that black-ish
+- Made some scripts a little lighter
+- Changed collision system to a lighter one ( = more fps)
