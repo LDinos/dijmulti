@@ -38,7 +38,7 @@ var_contrast_amount = 0;
 shader_enabled = true;
 full_screen_effect = true;
 //
-_i = floor((y-MyBoard.y+63)/64)
+_i = (y-MyBoard.y+63) div 64
 _j = (x-MyBoard.x+63) div 64
 crap = false
 myid = -4

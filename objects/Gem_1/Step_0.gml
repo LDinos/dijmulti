@@ -18,7 +18,7 @@ else bloom = false
 #endregion
 
 #region _i and _j
-_i = floor((y-MyBoard.y+63)/64)
+_i = (y-MyBoard.y+63) div 64
 _j = (x-MyBoard.x) div 64
 #endregion
 

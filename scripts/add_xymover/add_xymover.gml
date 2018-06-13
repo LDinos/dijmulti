@@ -5,25 +5,25 @@ else gmid = Gamerule_2
 
 if !gmid.lightOn
 {
-	with(instance_position(x+64,y,argument0))
+	with(collision_point(x+64,y,argument0,false,true))
 		{
 			xmover = 5
 			ymover = 0
 			alarm[0] = 1
 		}
-	with(instance_position(x-64,y,argument0))
+	with(collision_point(x-64,y,argument0,false,true))
 		{
 			xmover = -5
 			ymover = 0
 			alarm[0] = 1
 		}
-	with(instance_position(x,y+64,argument0))
+	with(collision_point(x,y+64,argument0,false,true))
 		{
 			xmover = 0
 			ymover = 5
 			alarm[0] = 1
 		}
-	with(instance_position(x,y-64,argument0))
+	with(collision_point(x,y-64,argument0,false,true))
 		{
 			xmover = 0
 			ymover = -5

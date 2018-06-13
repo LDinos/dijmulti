@@ -15,8 +15,9 @@ if MyGamerule.lightOn
 }
 else bloom = false
 
-_i = floor((y-MyBoard.y+63)/64)
+_i = (y-MyBoard.y+63) div 64
 _j = (x-MyBoard.x) div 64
+
 if gempower > 0
 {
 	alpharand = irandom_range(3,6)
@@ -54,13 +55,7 @@ if !MyGamerule.lightOn && !ammoving //&& !matchnear
 			var toucher = collision_point(x,y+acc+(sprite_height/2),collider,false,true)
 			if (toucher != noone)
 			{
-				/*if acc != 0
-				{
-					while(collision_point(x,y+sign(acc)+(sprite_height/2),collider,false,true) = noone)
-				    {
-						y+=sign(acc)
-					}
-				}*/
+
 				if toucher.acc = 0
 				{
 					acc = 0	
@@ -72,23 +67,11 @@ if !MyGamerule.lightOn && !ammoving //&& !matchnear
 					y = toucher.y - toucher.sprite_yoffset - (sprite_height/2)//...find the other y, and depending on the y origin, move it exactly above it
 				}
 			}
-			/*
-			if (place_meeting(x,y+acc,collider))
-			{
-				if acc !=0
-				{
-				    while(!place_meeting(x,y+sign(acc),collider))
-				    {
-				        y+=sign(acc);
-				    }
 
-				}
-				acc = 0
-			}*/
 			y+=acc
 			
 	}
-	//else {acc = 0; y = MyBoard.y + 64*_i}
+
 } else acc = 0
 
 if amPowered
