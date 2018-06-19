@@ -4,7 +4,6 @@
 //Default them (make space for 11th and 12th pos)
 x = 0
 y = 0 
-audio_play_sound(mus_stats,0,1)
 alpha = 1
 color = c_white
 //index = 0 //0 = points, 1 = matches, = style. Used in the object later on draw

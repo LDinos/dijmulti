@@ -28,7 +28,7 @@ if n_id == server_socket
 			ping = 0
             client_socket = noone
 			client_connected = false
-			room_goto(rm_multi)
+			if global.ONLINE_OVER = 0 room_goto(rm_multi)
             break;
         case network_type_data:
             //Data handling here...

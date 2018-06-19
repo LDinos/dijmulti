@@ -121,6 +121,7 @@ We will divide the cases from minimum gapss first. Of course the single gaps can
 */
 //lol = argument1
 
+
 for(t=0;t<=7;t++)
 {
 	gaps[t] = argument0.gaps[t]

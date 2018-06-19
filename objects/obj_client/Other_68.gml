@@ -15,7 +15,7 @@ if server >= 0
 			scr_recieved_packet(buffer2)
             break;
 		case network_type_disconnect:
-			room_goto(rm_multi)
+			if global.ONLINE_OVER = 0 room_goto(rm_multi)
 			break;
         }
     }

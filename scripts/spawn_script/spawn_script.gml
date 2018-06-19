@@ -1,4 +1,6 @@
 /* Always have possible moves! */
+
+#region SHAPE
 /*
 
 Use argument0.gemsfallen[i,j] or gemboard!
@@ -157,6 +159,8 @@ We will divide the cases from minimum gapss first. Of course the single gaps can
   Χ     Θ
 6)  Δ Ο
 */
+#endregion
+
 ds_list_clear(num_choices) //number of choices reset
 
 for(i=0;i<=7;i++)

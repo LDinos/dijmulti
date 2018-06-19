@@ -14,7 +14,6 @@ if !blazingspeed && IsGemActive
 		audio_play_sound(snd_blazingspeed,0,0)
 		with(Board_2) 
 		{
-			default_skin = sprite_index
 			sprite_index = spr_board_blazing		
 		}
 		alarm[4] = 600

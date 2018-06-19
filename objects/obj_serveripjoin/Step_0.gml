@@ -1,5 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
+if keyboard_check(ord("V")) && keyboard_check(vk_control)
+{
+	if clipboard_has_text()
+	{
+		field = clipboard_get_text()
+		
+		if string_length(field) > 18
+			{
+				field = string_delete(field, 18, string_length(field)-19);
+			}
+		
+	}
+}
+
 if keyboard_check_pressed(vk_enter)
     {
         

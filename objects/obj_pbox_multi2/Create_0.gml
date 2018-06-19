@@ -13,3 +13,4 @@ with(obj_client)
 		network_send_packet(client_socket,buffer,buffer_tell(buffer))
 		//buffer_delete(buffer)
 	}
+global.user2 = text

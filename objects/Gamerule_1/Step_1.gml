@@ -31,7 +31,7 @@ if !IsGemActive
 		}
 	}
 	check_summoves()
-	check_gaps()
+	//check_gaps()
 }
 
 var ready = true

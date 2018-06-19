@@ -2,6 +2,7 @@
 // You can write your code in this editor
 if !Gamerule_2.IsGemActive && !Gamerule_2.lightOn && Gamerule_2.spawnallowed && !Gamerule_2.flameon
 {
+	with(Gamerule_2) check_gaps(Board_2)
 	for(j=0;j<=7;j++)
 	{
 		if Gamerule_2.gaps[j] > 0 && !collision_line( Board_2.x + j*64, Board_2.y-64, Board_2.x + j*64, Board_2.y+4, Gem_2, false, true ) && !position_meeting(Board_2.x + j*64, Board_2.y, gem_dissappear2)

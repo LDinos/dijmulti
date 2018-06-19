@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0209e7a0-3cb2-4da8-a0dd-826eadc8b84f",
+            "Value": {
+                "id": "90d24ef1-5829-4d3f-966f-093c2173a03e",
+                "resourcePath": "objects\\obj_online_gameover\\obj_online_gameover.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "02407ff2-99a4-4508-b03c-66e7c105f388",
             "Value": {
                 "id": "6af373d5-9e05-42cf-9a92-3f67fa624b05",
@@ -1439,6 +1447,14 @@
             }
         },
         {
+            "Key": "639701f7-f134-46e2-86c2-3fb37325387d",
+            "Value": {
+                "id": "bbfe4344-7dde-4772-9b01-1f33573d2c9d",
+                "resourcePath": "fonts\\FBIBIG\\FBIBIG.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "639f0f40-db96-4032-a37d-04f40c1da3bf",
             "Value": {
                 "id": "fc81f83e-4005-4078-b089-4ce25d5e5534",
@@ -1820,6 +1836,14 @@
                 "id": "b0648e9a-f6c5-43fb-b74f-a18e7700d2a8",
                 "resourcePath": "scripts\\avalanche_create_gems\\avalanche_create_gems.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8328ea1a-1542-4c09-b9e0-93d13fa320a0",
+            "Value": {
+                "id": "a013dd3b-61a5-4776-b5e3-74fea76854f5",
+                "resourcePath": "views\\8328ea1a-1542-4c09-b9e0-93d13fa320a0.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2247,6 +2271,14 @@
             }
         },
         {
+            "Key": "a4726bd5-ff3a-4cab-a918-cf1f24ca0078",
+            "Value": {
+                "id": "702aaf3e-8337-42c8-a6eb-27a0c4a7cb35",
+                "resourcePath": "sprites\\spr_coin\\spr_coin.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a5319741-9739-49c5-80d5-63a8f8cefddb",
             "Value": {
                 "id": "5df4c98f-4414-4f4f-ac74-c0bb43082913",
@@ -2591,6 +2623,14 @@
             }
         },
         {
+            "Key": "bc4f2eda-1f20-4a6c-a428-cd8c01a20be3",
+            "Value": {
+                "id": "b88cc46a-8d1c-470b-ac80-7417ffe86c3e",
+                "resourcePath": "sounds\\snd_screenprint\\snd_screenprint.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "bc58dd86-6f79-4b6b-a612-e3ea9f5d454e",
             "Value": {
                 "id": "959dd26d-5fee-474a-8330-8c13ef8bdb7c",
@@ -2628,6 +2668,14 @@
                 "id": "f0d9de57-9e1a-4260-b12b-db530c9f06d2",
                 "resourcePath": "shaders\\shd_wave\\shd_wave.yy",
                 "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "be6c234e-3123-4122-82c4-72d57d9507f6",
+            "Value": {
+                "id": "4608edd6-39e1-4588-93f6-94143e475abc",
+                "resourcePath": "objects\\obj_levelbar_static\\obj_levelbar_static.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3295,6 +3343,14 @@
             }
         },
         {
+            "Key": "f09c6417-f009-4a07-86e9-49949d288ef7",
+            "Value": {
+                "id": "1b09e2f9-cf10-4d58-bbd6-d9492155963e",
+                "resourcePath": "objects\\obj_frontstats\\obj_frontstats.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f154a24c-7866-4212-ad25-d77e5420959e",
             "Value": {
                 "id": "2b0b6069-a380-4869-b337-180f620576e0",
@@ -3452,6 +3508,14 @@
                 "id": "6a1b6892-47d0-4bb3-b8b2-0d066b789927",
                 "resourcePath": "sprites\\spr_speedmatch\\spr_speedmatch.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fe8834db-ef09-4ac9-a4aa-9a4b28bccb05",
+            "Value": {
+                "id": "9db4c02d-f1d0-4ca9-8d49-1b3e3c0c7f2a",
+                "resourcePath": "sounds\\snd_gemdestroyed\\snd_gemdestroyed.yy",
+                "resourceType": "GMSound"
             }
         },
         {

@@ -16,8 +16,7 @@ if file_exists("settings.ini")
 		if (global.user2 == "bot" || global.user2 == "BOT") global.bot2 = true
 		else global.bot2 = false
 	ini_close()
-	if !global.bot1 ini_create_unlocks("unlocks_" + string(global.user1) + ".ini")
-	if !global.bot2 ini_create_unlocks("unlocks_" + string(global.user2) + ".ini")
+	if !file_exists("unlocks.ini") ini_create_unlocks("unlocks.ini")
 	instance_create(0,0,obj_menucontrol)
 	instance_create(0,0,obj_rightcontrol)
 	instance_create(0,0,obj_leftcontrol)

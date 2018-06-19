@@ -66,6 +66,7 @@ cursor_y2 = 0
 
 points = 0
 combo = 0
+bestcombo = 0
 depth = -2
 IsGemActive = false
 IsGemActive2 = false
@@ -73,4 +74,4 @@ moving = false //are gems doing match animation?
 instance_create_depth(Board_1.x - 32, (Board_1.y + 32) + 64*(global.board_rows-1),-10,stopper)
 instance_create_depth(Board_1.x - 32, (Board_1.y + 32) + 64*(global.board_rows-1)+16,-10,stopper)
 check_summoves()
-check_gaps()
+check_gaps(Board_1)

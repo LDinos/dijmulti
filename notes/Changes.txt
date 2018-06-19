@@ -40,4 +40,14 @@ for v_0.15
 - Added Help section
 - Added some simple gas backgrounds so the game isn't that black-ish
 - Made some scripts a little lighter
-- Changed collision system to a lighter one ( = more fps)
+- Changed collision system to a lighter one ( = more fps (from 190 fps -> 230 fps)
+- Changed gem explode sound effect (from a lightning explosion) to a more representive one
+- Hopefully online is okay now
+- You can paste an IP now
+- New stats for every gamemode (and online aswell)
+- Added coin system
+
+//TODO
+-ONLINE GAMEOVER FIX
+-AERIAL FIX
+-COINS/UNLOCKABLES

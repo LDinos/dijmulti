@@ -3,6 +3,8 @@
 /// @param Gem_index
 /// @param num_gem_spawn
 
+with(argument0) check_gaps(argument1)
+
 //no gaps found
 obj_avalanchedeposit.hidden_gems = 0
 counter = 0 //number of gems that get created

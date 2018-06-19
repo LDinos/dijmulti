@@ -12,7 +12,8 @@
         "dc21d207-b46f-4047-82eb-582519857aaa",
         "4be0dc3b-f189-4995-a03d-ee2d7c561d52",
         "d2e84742-48d8-463e-a367-30a567824edc",
-        "087ee035-c87d-4eac-b4e7-a23de2db8517"
+        "087ee035-c87d-4eac-b4e7-a23de2db8517",
+        "0209e7a0-3cb2-4da8-a0dd-826eadc8b84f"
     ],
     "filterType": "GMObject",
     "folderName": "multiplayer",

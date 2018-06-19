@@ -42,7 +42,11 @@ gem1 = noone
 gem2 = noone
 argument0.moving = true
 alarm[1] = 1
-with(argument0) combo = 0
+with(argument0)
+{
+if combo > bestcombo bestcombo = combo
+combo = 0
+}
 
 with(obj_server)
 		{

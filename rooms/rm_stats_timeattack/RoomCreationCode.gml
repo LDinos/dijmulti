@@ -1,0 +1,1 @@
+audio_play_sound(mus_stats,0,1)

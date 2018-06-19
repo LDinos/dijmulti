@@ -8,6 +8,10 @@ if Gamerule_2.IsGemActive2
 		j = 0
 		alarm[1] = 5
 	}
-	else instance_create(x,y,obj_gemgameover2) //end
+	else
+	{
+		if !instance_exists(obj_client) instance_create(x,y,obj_gemgameover2) //end
+		else instance_create(x,y,obj_online_gameover)	
+	}
 }
 else alarm[0] = 1

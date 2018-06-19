@@ -3,6 +3,10 @@ buffer_seek(buffer,buffer_seek_start,0)
 var msg = buffer_read(buffer,buffer_u8)
 switch msg
 {
+	case IAMOVER:
+			global.ONLINE_OVER = 1
+			break;
+			
 	case MAKEPOWER:
 		xxyyid = buffer_read(buffer,buffer_u8)
 		idpower = buffer_read(buffer,buffer_u8)
@@ -151,22 +155,6 @@ if instance_exists(obj_client)
 				}
 			}
 			break;
-		
-		case IAMOVER:
-			with(obj_lasthur2)
-			{
-				otherplayeralreadyover = true
-			}
-			break;
-			
-		case GAMEISOVER:
-			with(obj_gemgameover2)
-			{
-				audio_play_sound(vo_gameover,0,0)
-				create_text(spr_gameover,"stayer")
-				alarm[1] = 240
-			}
-			break;
 			
 		case STARTGAME:
 			Gamerule_2.controlallowed = true
@@ -199,6 +187,7 @@ if instance_exists(obj_client)
 			Gamerule_1.blazingspeed = buffer_read(buffer,buffer_u8)
 			Gamerule_1.blazingspeedchain = buffer_read(buffer,buffer_u8)
 			Gamerule_1.blazingcounter = buffer_read(buffer,buffer_u8)
+			Gamerule_1.bestcombo = buffer_read(buffer,buffer_u8)
 			with(Gamerule_1) blazing_check()
 		break;		
 		
@@ -210,8 +199,17 @@ if instance_exists(obj_client)
 			audio_play_sound(vo_blazingspeed,0,0)
 			audio_play_sound(snd_blazingspeed,0,0)
 			with(Board_1) sprite_index = spr_board_blazing
-			with(Gamerule_1) alarm[4] = 600
+			//with(Gamerule_1) alarm[4] = 600
 		break;
+		
+		case BOARD_LIGHTDOWN:
+			with(Gamerule_1)
+			{
+				blazingspeedchain = 1
+				blazingspeed = false
+			}
+			with(Board_1) sprite_index = spr_board_default
+			break;
 		
 		case POINTS:
 			Gamerule_1.points = buffer_read(buffer,buffer_u32)
@@ -225,6 +223,7 @@ if instance_exists(obj_client)
 			creat = instance_create_depth(128,560,0,obj_pbox_multi1)
 			creat.text = buffer_read(buffer,buffer_string)
 			creat.length = string_length(creat.text)
+			global.user1 = creat.text
 		break;
 		
 		case PING:
@@ -267,23 +266,7 @@ else if instance_exists(obj_server)
 				y = Board_2.y + other._i*64
 			}
 		}
-		break;
-			
-	case IAMOVER:
-			with(obj_lasthur1)
-			{
-				otherplayeralreadyover = true
-			}
-			break;
-			
-	case GAMEISOVER:
-		with(obj_gemgameover1)
-		{
-			audio_play_sound(vo_gameover,0,0)
-			create_text(spr_gameover,"stayer")
-			alarm[1] = 240
-		}
-		break;
+		break;			
 			
 	case PLAYER_POS:
 			player2.xlim = buffer_read(buffer,buffer_u8)
@@ -302,14 +285,25 @@ else if instance_exists(obj_server)
 		Gamerule_2.blazingspeed = buffer_read(buffer,buffer_u8)
 		Gamerule_2.blazingspeedchain = buffer_read(buffer,buffer_u8)
 		Gamerule_2.blazingcounter = buffer_read(buffer,buffer_u8)
+		Gamerule_2.bestcombo = buffer_read(buffer,buffer_u8)
 		with(Gamerule_2) blazing_check()
 		break;
 	case BOARD_LIGHTUP:
 		audio_play_sound(vo_blazingspeed,0,0)
 		audio_play_sound(snd_blazingspeed,0,0)
 		with(Board_2) sprite_index = spr_board_blazing
-		with(Gamerule_2) alarm[4] = 600
+		//with(Gamerule_2) alarm[4] = 600
 		break;
+		
+	case BOARD_LIGHTDOWN:
+		with(Gamerule_2)
+			{
+				blazingspeedchain = 1
+				blazingspeed = false
+			}
+		with(Board_2) sprite_index = spr_board_default
+		break;
+		
 	case POINTS:
 		Gamerule_2.points = buffer_read(buffer,buffer_u32)
 		break;
@@ -320,6 +314,7 @@ else if instance_exists(obj_server)
 		creat = instance_create_depth(1152,560,0,obj_pbox_multi2)
 		creat.text = buffer_read(buffer,buffer_string)
 		creat.length = string_length(creat.text)
+		global.user2 = creat.text
 		break;
 	case ENDGAME:
 		room_goto(rm_multi)

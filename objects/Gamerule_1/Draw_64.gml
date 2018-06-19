@@ -3,6 +3,7 @@
 draw_set_font(font2)
 draw_set_halign(fa_left)
 draw_text(8,32,global.version)
+//for(i=0;i<8;i++) draw_text(8,48 + 16*i,gaps[i])
 //draw_text(100,580,cur_time)
 /*
 for(i=0;i<=global.board_rows-1;i++)

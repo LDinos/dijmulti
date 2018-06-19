@@ -2,12 +2,12 @@
 {
     "name": "rm_stats_lightning",
     "id": "ed7855b5-2f7a-45b7-a180-c86295c52d1d",
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
-        "2b90e0f7-bce5-4f31-a614-58f64d1bf5ba"
+        "152d3c01-eb43-4fce-a9c5-21be2028f7e2"
     ],
     "IsDnD": false,
     "layers": [
@@ -25,7 +25,7 @@
             "inheritSubLayers": false,
             "inheritVisibility": false,
             "instances": [
-{"name": "inst_1D889B51","id": "2b90e0f7-bce5-4f31-a614-58f64d1bf5ba","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_1D889B51","objId": "c99f27ce-f3da-4aa1-a265-d9d11f5f8fd6","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.0","x": 0,"y": 0}
+{"name": "inst_5F87AB8F","id": "152d3c01-eb43-4fce-a9c5-21be2028f7e2","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_5F87AB8F","objId": "f09c6417-f009-4a07-86e9-49949d288ef7","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.0","x": 0,"y": 0}
             ],
             "layers": [
 
